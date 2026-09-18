@@ -1,0 +1,14 @@
+lib/
+├── core/
+│   ├── routing/         # Routing configuration (we will use go_router)
+│   ├── theme/           # Colors, typography, and app theme
+│   └── utils/           # Helper functions and formatters
+├── features/
+│   ├── auth/            # Onboarding, Login, Registration, PIN Setup
+│   ├── dashboard/       # Dashboard and bottom navigation scaffold
+│   ├── wallet/          # Deposit, Withdraw, Receipts
+│   ├── history/         # Transaction History
+│   └── profile/         # User Profile & Settings
+├── shared/
+│   └── widgets/         # Reusable buttons, text fields, and modals
+└── main.dart            # App entry point
