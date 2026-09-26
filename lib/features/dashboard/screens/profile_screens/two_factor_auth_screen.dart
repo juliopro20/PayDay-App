@@ -29,7 +29,7 @@ class _TwoFactorAuthScreenState extends State<TwoFactorAuthScreen> {
               title: const Text('Enable 2FA via SMS', style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.deepNavy)),
               subtitle: const Text('Receive a verification code via SMS every time you log in.'),
               value: _is2faEnabled,
-              activeColor: AppColors.primaryOrange,
+              activeThumbColor: AppColors.primaryOrange,
               onChanged: (val) => setState(() => _is2faEnabled = val),
             ),
           ],

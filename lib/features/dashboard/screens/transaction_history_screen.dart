@@ -97,7 +97,7 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
-                      border: Border.all(color: AppColors.borderLight.withOpacity(0.5)),
+                      border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.5)),
                     ),
                     child: const Icon(Icons.notifications_outlined, size: 20, color: AppColors.deepNavy),
                   ),
@@ -172,14 +172,14 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: AppColors.borderLight.withOpacity(0.6)),
+                          border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.6)),
                         ),
                         child: Row(
                           children: [
                             Container(
                               height: 42,
                               width: 42,
-                              decoration: BoxDecoration(color: (tx['color'] as Color).withOpacity(0.15), shape: BoxShape.circle),
+                              decoration: BoxDecoration(color: (tx['color'] as Color).withValues(alpha: 0.15), shape: BoxShape.circle),
                               child: Center(
                                 child: Text(tx['symbol'], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: tx['color'])),
                               ),

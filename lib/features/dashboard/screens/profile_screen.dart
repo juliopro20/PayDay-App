@@ -66,8 +66,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: AppColors.borderLight.withOpacity(0.6)),
-                  boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10, offset: const Offset(0, 4))],
+                  border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.6)),
+                  boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4))],
                 ),
                 child: Column(
                   children: [
@@ -121,7 +121,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             label: const Text('My QR Code', style: TextStyle(fontSize: 12)),
                             style: OutlinedButton.styleFrom(
                               foregroundColor: AppColors.deepNavy,
-                              side: BorderSide(color: AppColors.borderLight.withOpacity(0.8)),
+                              minimumSize: const Size.fromHeight(46), // Standardized height
+                              side: BorderSide(color: AppColors.borderLight.withValues(alpha: 0.8)),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                             ),
                           ),
@@ -137,6 +138,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.primaryOrange,
                               foregroundColor: Colors.white,
+                              minimumSize: const Size.fromHeight(46), // Standardized height
+                              elevation: 0,
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                             ),
                           ),
@@ -155,7 +158,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: AppColors.borderLight.withOpacity(0.6)),
+                  border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.6)),
                 ),
                 child: Column(
                   children: [
@@ -191,7 +194,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: AppColors.borderLight.withOpacity(0.6)),
+                  border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.6)),
                 ),
                 child: Column(
                   children: [
@@ -205,7 +208,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         children: [
                           Container(
                             padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(color: AppColors.deepNavy.withOpacity(0.05), shape: BoxShape.circle),
+                            decoration: BoxDecoration(color: AppColors.deepNavy.withValues(alpha: 0.05), shape: BoxShape.circle),
                             child: const Icon(Icons.fingerprint_rounded, size: 20, color: AppColors.deepNavy),
                           ),
                           const SizedBox(width: 14),
@@ -220,7 +223,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           Switch(
                             value: _biometricEnabled,
-                            activeColor: AppColors.primaryOrange,
+                            activeThumbColor: AppColors.primaryOrange,
                             onChanged: (val) => setState(() => _biometricEnabled = val),
                           ),
                         ],
@@ -242,7 +245,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: AppColors.borderLight.withOpacity(0.6)),
+                  border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.6)),
                 ),
                 child: Column(
                   children: [
@@ -287,7 +290,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       onTap: onTap,
       leading: Container(
         padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(color: AppColors.deepNavy.withOpacity(0.05), shape: BoxShape.circle),
+        decoration: BoxDecoration(color: AppColors.deepNavy.withValues(alpha: 0.05), shape: BoxShape.circle),
         child: Icon(icon, size: 20, color: AppColors.deepNavy),
       ),
       title: Text(title, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: AppColors.deepNavy)),

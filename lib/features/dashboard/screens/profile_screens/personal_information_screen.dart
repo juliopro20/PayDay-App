@@ -34,7 +34,7 @@ class PersonalInformationScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.borderLight.withOpacity(0.6)),
+        border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.6)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

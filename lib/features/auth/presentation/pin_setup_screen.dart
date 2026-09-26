@@ -74,7 +74,7 @@ class _PinSetupScreenState extends State<PinSetupScreen> {
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: AppColors.deepNavy.withOpacity(0.05),
+                      color: AppColors.deepNavy.withValues(alpha: 0.05),
                     ),
                     child: const Icon(Icons.lock_rounded, size: 28, color: AppColors.deepNavy),
                   ),
@@ -109,7 +109,7 @@ class _PinSetupScreenState extends State<PinSetupScreen> {
                           borderRadius: BorderRadius.circular(12),
                           boxShadow: [
                             if (isFilled)
-                              BoxShadow(color: AppColors.primaryOrange.withOpacity(0.15), blurRadius: 8, offset: const Offset(0, 4)),
+                              BoxShadow(color: AppColors.primaryOrange.withValues(alpha: 0.15), blurRadius: 8, offset: const Offset(0, 4)),
                           ],
                         ),
                         child: Center(
@@ -132,9 +132,9 @@ class _PinSetupScreenState extends State<PinSetupScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white.withValues(alpha: 0.5),
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: AppColors.borderLight.withOpacity(0.3)),
+                      border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.3)),
                     ),
                     child: Column(
                       children: [
@@ -173,10 +173,10 @@ class _PinSetupScreenState extends State<PinSetupScreen> {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppColors.borderLight.withOpacity(0.6)),
+              border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.6)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.02),
+                  color: Colors.black.withValues(alpha: 0.02),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),

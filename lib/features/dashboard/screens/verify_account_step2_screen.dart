@@ -85,7 +85,7 @@ class _VerifyAccountStep2ScreenState extends State<VerifyAccountStep2Screen> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.borderLight.withOpacity(0.8)),
+                  border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.8)),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -116,7 +116,7 @@ class _VerifyAccountStep2ScreenState extends State<VerifyAccountStep2Screen> {
                       Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: _selfieUploaded ? const Color(0xFFE8F5E9) : AppColors.primaryOrange.withOpacity(0.1),
+                          color: _selfieUploaded ? const Color(0xFFE8F5E9) : AppColors.primaryOrange.withValues(alpha: 0.1),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(_selfieUploaded ? Icons.check_rounded : Icons.camera_alt_outlined, color: _selfieUploaded ? const Color(0xFF10B981) : AppColors.primaryOrange, size: 20),
@@ -135,9 +135,9 @@ class _VerifyAccountStep2ScreenState extends State<VerifyAccountStep2Screen> {
               Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: AppColors.deepNavy.withOpacity(0.03),
+                  color: AppColors.deepNavy.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.deepNavy.withOpacity(0.08)),
+                  border: Border.all(color: AppColors.deepNavy.withValues(alpha: 0.08)),
                 ),
                 child: Row(
                   children: const [

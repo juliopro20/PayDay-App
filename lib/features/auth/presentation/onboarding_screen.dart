@@ -86,7 +86,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           width: 220,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: AppColors.deepNavy.withOpacity(0.05),
+                            color: AppColors.deepNavy.withValues(alpha: 0.05),
                           ),
                           child: Center(
                             child: Container(
@@ -97,7 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 borderRadius: BorderRadius.circular(24),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.05),
+                                    color: Colors.black.withValues(alpha: 0.05),
                                     blurRadius: 20,
                                     offset: const Offset(0, 10),
                                   ),

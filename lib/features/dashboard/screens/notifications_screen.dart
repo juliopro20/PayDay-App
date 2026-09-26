@@ -98,7 +98,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
-                      border: Border.all(color: AppColors.borderLight.withOpacity(0.5)),
+                      border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.5)),
                     ),
                     child: const Icon(Icons.notifications_outlined, size: 20, color: AppColors.deepNavy),
                   ),
@@ -175,7 +175,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: AppColors.borderLight.withOpacity(0.6)),
+                          border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.6)),
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16),
@@ -195,7 +195,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                                   children: [
                                     Container(
                                       padding: const EdgeInsets.all(10),
-                                      decoration: BoxDecoration(color: (notif['color'] as Color).withOpacity(0.15), shape: BoxShape.circle),
+                                      decoration: BoxDecoration(color: (notif['color'] as Color).withValues(alpha: 0.15), shape: BoxShape.circle),
                                       child: Icon(notif['icon'], color: notif['color'], size: 20),
                                     ),
                                     const SizedBox(width: 12),

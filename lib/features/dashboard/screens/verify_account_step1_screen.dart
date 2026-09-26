@@ -94,7 +94,7 @@ class _VerifyAccountStep1ScreenState extends State<VerifyAccountStep1Screen> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.borderLight.withOpacity(0.8)),
+                  border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.8)),
                 ),
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<String>(
@@ -121,9 +121,9 @@ class _VerifyAccountStep1ScreenState extends State<VerifyAccountStep1Screen> {
               Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: AppColors.deepNavy.withOpacity(0.03),
+                  color: AppColors.deepNavy.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.deepNavy.withOpacity(0.08)),
+                  border: Border.all(color: AppColors.deepNavy.withValues(alpha: 0.08)),
                 ),
                 child: Row(
                   children: const [
@@ -190,7 +190,7 @@ class _VerifyAccountStep1ScreenState extends State<VerifyAccountStep1Screen> {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: isUploaded ? const Color(0xFFE8F5E9) : AppColors.primaryOrange.withOpacity(0.1),
+                color: isUploaded ? const Color(0xFFE8F5E9) : AppColors.primaryOrange.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(isUploaded ? Icons.check_rounded : icon, color: isUploaded ? const Color(0xFF10B981) : AppColors.primaryOrange, size: 20),
