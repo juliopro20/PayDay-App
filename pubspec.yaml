@@ -19,8 +19,15 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4  # Add this line
+
+# Configure the launcher icons at the root level (no indentation)
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.jpg"   # Points directly to your file
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/
+    - assets/images/                  # Make sure this line is closed with a hyphen/dash
