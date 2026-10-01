@@ -137,12 +137,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     Expanded(
                       child: ElevatedButton.icon(
                         onPressed: _openDepositModal,
-                        icon: const Icon(Icons.add_rounded, size: 18),
-                        label: const Text('Reload', style: TextStyle(fontWeight: FontWeight.bold)),
+                        icon: const Icon(Icons.add_rounded, size: 16),
+                        // Wrapped in FittedBox with a smaller font size to prevent awkward wrapping (Relo/ad)
+                        label: const FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text('Reload', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
+                        ),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.primaryOrange,
                           foregroundColor: Colors.white,
                           minimumSize: const Size.fromHeight(48),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                           elevation: 0,
                         ),
@@ -152,11 +157,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     Expanded(
                       child: OutlinedButton.icon(
                         onPressed: _openWithdrawScreen,
-                        icon: const Icon(Icons.send_rounded, size: 18),
-                        label: const Text('Send', style: TextStyle(fontWeight: FontWeight.bold)),
+                        icon: const Icon(Icons.send_rounded, size: 16),
+                        label: const FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text('Send', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
+                        ),
                         style: OutlinedButton.styleFrom(
                           foregroundColor: Colors.white,
                           minimumSize: const Size.fromHeight(48),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                           side: const BorderSide(color: Colors.white24),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                         ),
@@ -313,34 +322,37 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Row(
       children: [
         Container(
-          height: 44,
-          width: 44,
+          height: 40,
+          width: 40,
           decoration: BoxDecoration(color: color.withValues(alpha: 0.15), shape: BoxShape.circle),
-          child: Center(child: Text(symbol, style: TextStyle(fontWeight: FontWeight.bold, fontSize: symbol.length > 2 ? 16 : 13, color: color))),
+          child: Center(child: Text(symbol, style: TextStyle(fontWeight: FontWeight.bold, fontSize: symbol.length > 2 ? 14 : 12, color: color))),
         ),
-        const SizedBox(width: 12),
+        const SizedBox(width: 10),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.deepNavy)),
+              // Reduced font size for better spacing/responsiveness
+              Text(title, style: const TextStyle(fontSize: 11.5, fontWeight: FontWeight.bold, color: AppColors.deepNavy)),
               const SizedBox(height: 2),
-              Text(subtitle, style: const TextStyle(fontSize: 11, color: AppColors.textSecondary)),
+              // Reduced font size for subtitle
+              Text(subtitle, style: const TextStyle(fontSize: 9.5, color: AppColors.textSecondary)),
             ],
           ),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text(amount, style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: amount.startsWith('+') ? const Color(0xFF2E7D32) : AppColors.deepNavy)),
+            // Reduced font size for amount to fit comfortably
+            Text(amount, style: TextStyle(fontSize: 11.5, fontWeight: FontWeight.bold, color: amount.startsWith('+') ? const Color(0xFF2E7D32) : AppColors.deepNavy)),
             const SizedBox(height: 4),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
                 color: isSuccess ? const Color(0xFFE8F5E9) : const Color(0xFFFFF8E1),
                 borderRadius: BorderRadius.circular(6),
               ),
-              child: Text(status, style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: isSuccess ? const Color(0xFF2E7D32) : const Color(0xFFF57C00))),
+              child: Text(status, style: TextStyle(fontSize: 9, fontWeight: FontWeight.bold, color: isSuccess ? const Color(0xFF2E7D32) : const Color(0xFFF57C00))),
             ),
           ],
         ),

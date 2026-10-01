@@ -118,10 +118,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Navigator.push(context, MaterialPageRoute(builder: (context) => const MyQrCodeScreen()));
                             },
                             icon: const Icon(Icons.qr_code_rounded, size: 16),
-                            label: const Text('My QR Code', style: TextStyle(fontSize: 12)),
+                            label: const FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text('My QR Code', style: TextStyle(fontSize: 12)),
+                            ),
                             style: OutlinedButton.styleFrom(
                               foregroundColor: AppColors.deepNavy,
-                              minimumSize: const Size.fromHeight(46), // Standardized height
+                              minimumSize: const Size.fromHeight(46),
+                              padding: const EdgeInsets.symmetric(horizontal: 6),
                               side: BorderSide(color: AppColors.borderLight.withValues(alpha: 0.8)),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                             ),
@@ -134,11 +138,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Navigator.push(context, MaterialPageRoute(builder: (context) => const VerifyAccountStep1Screen()));
                             },
                             icon: const Icon(Icons.arrow_upward_rounded, size: 16),
-                            label: const Text('Upgrade Account', style: TextStyle(fontSize: 12)),
+                            // Wrapped in FittedBox to prevent awkward text wrapping on narrow screens
+                            label: const FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text('Upgrade Account', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                            ),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.primaryOrange,
                               foregroundColor: Colors.white,
-                              minimumSize: const Size.fromHeight(46), // Standardized height
+                              minimumSize: const Size.fromHeight(46),
+                              padding: const EdgeInsets.symmetric(horizontal: 6),
                               elevation: 0,
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                             ),

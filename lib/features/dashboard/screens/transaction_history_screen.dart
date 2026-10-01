@@ -119,8 +119,9 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
             ),
             const SizedBox(height: 16),
 
-            // Filter Chips
-            Padding(
+            // Filter Chips (Scrollable to prevent overflow on smaller screens)
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 children: ['All', 'Deposits', 'Withdrawals'].map((filter) {
@@ -136,7 +137,7 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
                       labelStyle: TextStyle(
                         color: isSelected ? Colors.white : AppColors.deepNavy,
                         fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                        fontSize: 12,
                       ),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                     ),
@@ -168,7 +169,7 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
                       ],
                       Container(
                         margin: const EdgeInsets.only(bottom: 12),
-                        padding: const EdgeInsets.all(16),
+                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16),
@@ -177,37 +178,45 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
                         child: Row(
                           children: [
                             Container(
-                              height: 42,
-                              width: 42,
+                              height: 38,
+                              width: 38,
                               decoration: BoxDecoration(color: (tx['color'] as Color).withValues(alpha: 0.15), shape: BoxShape.circle),
                               child: Center(
-                                child: Text(tx['symbol'], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: tx['color'])),
+                                child: Text(tx['symbol'], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11, color: tx['color'])),
                               ),
                             ),
-                            const SizedBox(width: 12),
+                            const SizedBox(width: 10),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(tx['title'], style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: AppColors.deepNavy)),
+                                  // Reduced font size to prevent overlapping
+                                  Text(
+                                    tx['title'],
+                                    style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.bold, color: AppColors.deepNavy),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                   const SizedBox(height: 2),
-                                  Text(tx['type'], style: const TextStyle(fontSize: 12, color: AppColors.textSecondary)),
+                                  Text(tx['type'], style: const TextStyle(fontSize: 10.5, color: AppColors.textSecondary)),
                                 ],
                               ),
                             ),
+                            const SizedBox(width: 8),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
+                                // Reduced font size for amount to fit tightly aligned cards
                                 Text(
                                   tx['amount'],
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 12.5,
                                     fontWeight: FontWeight.bold,
                                     color: tx['isPositive'] ? const Color(0xFF2E7D32) : AppColors.deepNavy,
                                   ),
                                 ),
-                                const SizedBox(height: 4),
-                                Text(tx['time'], style: const TextStyle(fontSize: 11, color: AppColors.textSecondary)),
+                                const SizedBox(height: 3),
+                                Text(tx['time'], style: const TextStyle(fontSize: 10, color: AppColors.textSecondary)),
                               ],
                             ),
                           ],
